@@ -1,0 +1,29 @@
+// Menu
+int menu() {
+    int choice;
+
+    // Screen should be cleared before displaying options
+    #ifdef _WIN32
+        system("cls");
+    #else
+        system("clear");
+    #endif
+
+    printf("==============================\n");
+    printf("         PROJECT MENU         \n");
+    printf("==============================\n");
+    printf("1. First Calculation (Addition)\n");
+    printf("2. Second Calculation (Subtraction)\n");
+    printf("3. Read Data from File\n");
+    printf("4. Write Data to File\n");
+    printf("5. Exit Application\n");
+    printf("------------------------------\n");
+    printf("Select an option: ");
+
+    // Selected option must be returned as an integer
+    if (scanf("%d", &choice) != 1) {
+        while (getchar() != '\n'); // Clear buffer on invalid input
+        return 0; 
+    }
+    return choice;
+}
